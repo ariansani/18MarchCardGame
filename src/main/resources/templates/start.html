@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img data-th-src="${deckImgUrl}" alt="">
+    <div> Deck Remaining :  <span data-th-text="${deckRemaining}"></span></div>
+    <br/>
+    <form action="#" th:action="@{'/deck/' + ${deckId}}" method="post">
+        <select name="drawCard" id="drawCard">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        <input type="text" name="deckId" id="deckId" data-th-text="${deckId}" style="display:none;">
+        <button type="submit">Draw</button>
+    </form>
+</body>
+</html>
